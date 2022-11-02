@@ -23,6 +23,5 @@
             "js": ["contentScript.js"]
         }
     ],
-    "permissions": ["activeTab", "scripting", "tabs"],
-    "chrome_url_overrides" : { "newtab": "newTab.html"}
+    "permissions": ["activeTab", "scripting", "tabs"]
 }

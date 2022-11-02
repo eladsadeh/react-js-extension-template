@@ -17,13 +17,24 @@ module.exports = {
         options: path.resolve('src/options/options.jsx'),
         background: path.resolve('src/background/background.js'),
         contentScript: path.resolve('src/contentScript/index.jsx'),
-        newTab: path.resolve('src/tabs/index.tsx')
+        newTab: path.resolve('src/tabs/index.jsx')
     },
     module: {
         rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                      presets: [
+                        ['@babel/preset-env', {
+                          "targets": "defaults" 
+                        }],
+                        '@babel/preset-react'
+                      ]
+                    }
+                }]
             },
             {
                 test: /\.css$/i,
