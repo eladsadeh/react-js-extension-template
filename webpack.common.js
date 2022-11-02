@@ -13,17 +13,16 @@ const titles = {
 
 module.exports = {
     entry: {
-        popup: path.resolve('src/popup/index.tsx'),
-        options: path.resolve('src/options/options.tsx'),
-        background: path.resolve('src/background/background.ts'),
-        contentScript: path.resolve('src/contentScript/index.tsx'),
+        popup: path.resolve('src/popup/index.jsx'),
+        options: path.resolve('src/options/options.jsx'),
+        background: path.resolve('src/background/background.js'),
+        contentScript: path.resolve('src/contentScript/index.jsx'),
         newTab: path.resolve('src/tabs/index.tsx')
     },
     module: {
         rules: [
             {
-                use: 'ts-loader',
-                test: /\.tsx?$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
             },
             {
@@ -69,7 +68,7 @@ module.exports = {
         ])
     ],
     resolve: {
-        extensions: ['.tsx', '.js', '.ts']
+        extensions: ['.jsx', '.js']
     },
     output: {
         filename: '[name].js',
