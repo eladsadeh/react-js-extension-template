@@ -8,7 +8,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const titles = {
     popup: "Extension Popup",
     options: "Extension Options",
-    newTab: "New Tab"
 }
 
 module.exports = {
@@ -17,7 +16,6 @@ module.exports = {
         options: path.resolve('src/options/options.jsx'),
         background: path.resolve('src/background/background.js'),
         contentScript: path.resolve('src/contentScript/index.jsx'),
-        newTab: path.resolve('src/tabs/index.jsx')
     },
     module: {
         rules: [
