@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "react-boilerplate",
+    "description": "react-boilerplate for chrome extension",
+    "version": "1.0.0",
+    "action" : {
+        "default_popup": "popup.html",
+        "default_title": "React Boilerplate",
+        "default_icon" : "tpicon-48.png"
+    },
+    "icons": {
+        "16" : "tpicon-16.png",
+        "48" : "tpicon-48.png",
+        "128" : "tpicon-128.png"
+    },
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "permissions": ["activeTab", "scripting", "tabs"],
+    "chrome_url_overrides" : { "newtab": "newTab.html"}
+}
